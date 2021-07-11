@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #heart {
+            width: 50px;
+            height: 150px;
+            /* display: inline-block; */
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 300px;
+            /* border: 1px solid black; */
+            position: relative;
+        }
+
+        .anjian {
+            width: 150px;
+            height: 30px;
+            /* border: 1px solid red; */
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 30px;
+        }
+
+        .bottom,
+        .left,
+        .right {
+            width: 50px;
+            height: 50px;
+            background: red;
+            position: absolute;
+        }
+
+        .bottom {
+            transform: rotate(45deg);
+        }
+
+        .left {
+            bottom: 100%;
+            right: 100%;
+            transform: rotate(45deg) translateX(30px);
+            border-radius: 50% 0% 0% 50%;
+        }
+
+        .right {
+            bottom: 100%;
+            left: 100%;
+            transform: rotate(45deg) translateY(30px);
+            border-radius: 50% 50% 0% 0%;
+        }
+
+        #heart.a {
+            animation: xxx 1s alternate infinite ease;
+        }
+
+        #heart.b {
+            animation: xxx 500ms alternate infinite ease;
+        }
+
+        #heart.c {
+            animation: xxx 2s alternate infinite ease;
+        }
+
+        @keyframes xxx {
+            0% {
+                transform: scale(1.0);
+            }
+
+            100% {
+                transform: scale(1.5);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="heart">
+        <div class="bottom"></div>
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
+    <div class="anjian">
+        <button id="normal">正常</button>
+        <button id="quickly">快速</button>
+        <button id="slowly">慢速</button>
+    </div>
+    <script>
+        normal.onclick = () => {
+            heart.classList.remove('b');
+            heart.classList.remove('c');
+            heart.classList.add('a');
+        }
+        quickly.onclick = () => {
+            heart.classList.remove('a');
+            heart.classList.remove('c');
+            heart.classList.add('b');
+        }
+        slowly.onclick = () => {
+            heart.classList.remove('a');
+            heart.classList.remove('b');
+            heart.classList.add('c');
+        }
+    </script>
+</body>
+
+</html>
